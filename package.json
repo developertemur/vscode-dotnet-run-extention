@@ -1,0 +1,83 @@
+{
+  "name": "dotnet-run",
+  "displayName": "dotnet-run",
+  "publisher": "DeveloperTemur",
+  "description": "dotnet runner for console or single file app with dotnet 10+",
+  "version": "0.0.1",
+  "icon": "logo.png",
+  "engines": {
+    "vscode": "^1.104.0"
+  },
+  "extensionDependencies": [
+    "ms-dotnettools.csharp" 
+  ],
+  "categories": [
+    "Other","Programming Languages","Education","Linters","Debuggers","Testing"
+  ],
+  "tags": [
+    "dotnet","csharp","runner","console","single file","asp.net","c#","dotnet-run"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "dotnet-run.developerInfo",
+        "title": "Developer Info"
+      },
+      {
+        "command": "dotnet-run.runWithDotnet",
+        "title": "Run with dotnet"
+      },
+      {
+        "command": "dotnet-run.checkDotnet",
+        "title": "Check dotnet"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "dotnet-run.runWithDotnet",
+          "when": "resourceExtname == .cs",
+          "group": "navigation"
+        },
+        {
+          "command": "dotnet-run.checkDotnet",
+          "when": "resourceExtname == .cs",
+          "group": "navigation"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "dotnet-run.runWithDotnet",
+          "when": "resourceExtname == .cs",
+          "group": "navigation"
+        },
+        {
+          "command": "dotnet-run.checkDotnet",
+          "when": "resourceExtname == .cs",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.104.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@typescript-eslint/eslint-plugin": "^8.45.0",
+    "@typescript-eslint/parser": "^8.45.0",
+    "eslint": "^9.36.0",
+    "typescript": "^5.9.3",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}

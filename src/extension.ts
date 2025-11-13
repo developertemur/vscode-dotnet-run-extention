@@ -30,7 +30,7 @@ export function activate(context: vscode.ExtensionContext) {
 
           if (choice === "Download") {
             vscode.env.openExternal(
-              vscode.Uri.parse("https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-10.0.100-rc.2-windows-x64-installer")
+              vscode.Uri.parse("https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-10.0.100-windows-x64-installer")
             );
           }
         }

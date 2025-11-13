@@ -3,7 +3,7 @@
   "displayName": "dotnet-run",
   "publisher": "DeveloperTemur",
   "description": "dotnet runner for console or single file app with dotnet 10+",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "icon": "logo.png",
   "engines": {
     "vscode": "^1.104.0"
